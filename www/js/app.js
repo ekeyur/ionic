@@ -1,11 +1,32 @@
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
+// 'fabular' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-// 'starter.services' is found in services.js
-// 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+// 'fabular.services' is found in services.js
+// 'fabular.controllers' is found in controllers.js
+
+//Function for voice
+function textToSpeak(msg, idx) {
+	if (typeof msg !== 'string') {
+		throw new TypeError('Expected to say a string.');
+	}
+	var y = window.speechSynthesis;
+	if (!y) {
+		return console.warn('Your browser does not support `speechSynthesis` yet.');
+	}
+	var s = new SpeechSynthesisUtterance(msg);
+	s.voice = y.getVoices()[idx || 0];
+	y.speak(s);
+}
+// Initializing some variables
+var app = angular.module('fabular', []);
+var chelevel = 1;
+var resultLink = [];
+//Holds reward items in basket array
+var basket = [];
+
+angular.module('fabular', ['ionic', 'fabular.controllers', 'fabular.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,54 +53,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  });
-
+  .state({
+  name : 'things',
+  url : '/things',
+  templateUrl : 'templates/things.html',
+  controller : 'fabularController'
+});
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/things');
 
 });

@@ -1,0 +1,34 @@
+<div class="logoDiv">
+  <div>
+      <button type="button" name="1" ng-click="levelChange(1)">1</button>
+      <button type="button" name="2" ng-click="levelChange(2)">2</button>
+      <button type="button" name="3" ng-click="levelChange(3)">3</button>
+      <button type="button" name="4" ng-click="levelChange(4)">4</button>
+      <button type="button" name="5" ng-click="levelChange(5)">5</button>
+  </div>
+  <img class="logo" src="img/fabulari_t1.png" alt="logo" />
+  <div class="nav">
+    <!-- <a ui-sref="settings">settings</a> -->
+    <a ui-sref="basket"> <img class="barn" src="img/barn.png" alt="barn" /></a>
+  </div>
+</div>
+<div class="wrapper">
+  <div class="viewer">
+      <div class="prompt animated slideInLeft">
+        <div ng-repeat = "question in questionArray">
+          <span><img class="promptPic" ng-src="img/{{question.name}}.png" alt="ask for" /></span>
+        </div>
+      </div>
+      <div class="chainUrl">
+        <span ng-repeat="result in resultLink"><img class="chainPic" ng-src="img/{{result.name}}.png"/></span>
+      </div>
+      <div class="options animated slideInRight">
+        <div ng-repeat="option in optionsArray" ng-class="{ 'animated wobble error' : option.wobble === true }" ng-click="clicked(option)">
+          <span><img class="promptPic" ng-src="img/{{option.name}}.png" alt="option" /></span>
+        </div>
+      </div>
+      <div class="again">
+        <button class="round-button animated pulse infinite" ng-if="expectedResult.length === resultLink.length" ng-click="playAgain()">Play Again?</button>
+      </div>
+    </div>
+  </div>
