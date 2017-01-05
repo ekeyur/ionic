@@ -10,6 +10,5 @@ angular.module('fabular.services', [])
       url : url
     });
   };
-
 return service;
 });

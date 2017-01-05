@@ -4824,6 +4824,12 @@ a.subdued {
   background-image: linear-gradient(0deg, #ddd, #ddd 50%, transparent 50%);
   border-color: #ddd; }
 
+/* added this myself
+.tabs-background-transparent .tabs,
+.tabs-background-transparent > .tabs {
+  background-color: rbga(0,0,0,1);
+ }*/
+
 .tabs-background-stable .tabs,
 .tabs-background-stable > .tabs {
   background-color: #f8f8f8;
