@@ -1,11 +1,16 @@
 <div class="body">
-  <!-- <div class="playAgain">
-    <img class="cloud animated slideInLeft" ng-if="expectedResult.length === resultLink.length" ng-click="playAgain()" src="img/cloud.png" alt="cloud" />
-  </div> -->
   <div class="play-again">
     <span class="animated pulse infinite"><i class="ion-refresh" ng-show="expectedResult.length === resultLink.length" ng-click="playAgain()"></i></span>
   </div>
-    <div class="container">
+  <div class="basket" ng-click="clickedBasket()">
+    <img class="basket-img" src="img/basket-icon.png">
+  </div>
+
+  <div class="container-basket" ng-show="clickedStatement">
+       <img class="baskets-img" ng-repeat="item in basket track by $index" ng-src="img/{{item}}.png" alt="item" />
+   </div>
+
+    <div class="container" ng-show="clickedStatement === false">
       <div class="row animated slideInLeft question-container">
         <div class="question-container" ng-repeat="question in questionArray">
               <img  class = "promptPic" ng-src="img/{{question.name}}.png" alt="ask for" />
