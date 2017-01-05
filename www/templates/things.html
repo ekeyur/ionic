@@ -31,13 +31,25 @@
       <a ng-repeat="level in levels" ng-click="levelChange(level)" class="active tab button icon button-calm">{{level}}</a>
     </div>
   <div class="tabs tabs-background-transparent tabs-color-calm tabs-icon-top">
-  <a class="tab-item active" >
+  <a class="tab-item" >
     <i class="icon ion-ios-people"></i>
     Team
   </a>
-  <a class="tab-item active" ng-click="setSettings()">
+  <a class="tab-item" ng-click="setSettings()">
     <i class="icon ion-settings"></i>
     Level
+  </a>
+  <a class="tab-item" ng-click="setCategory('fruits')">
+    <i class="icon ion-social-apple"></i>
+    Fruits
+  </a>
+  <a class="tab-item" ng-click="setCategory('animals')">
+    <i class="icon ion-ios-paw"></i>
+    Animals
+  </a>
+  <a class="tab-item" ng-click="setCategory('toys')">
+    <i class="icon ion-ios-football"></i>
+    Toys
   </a>
 </div>
 </div>
