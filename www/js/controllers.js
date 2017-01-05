@@ -14,7 +14,7 @@ angular.module('fabular.controllers', [])
 	$scope.clickedStatement = false;
 	$scope.settings = 'noshow';
 	var inBasket = [];
-
+	$scope.category = 'fruits';
 	$scope.clickedBasket = function() {
 		if($scope.clickedStatement === false){
       $scope.clickedStatement = true;
@@ -48,6 +48,7 @@ angular.module('fabular.controllers', [])
 	};
 	$scope.setCategory = function(value){
 		$scope.category = value;
+		console.log(value);
 	};
 	$scope.setSettings = function(){
 		$scope.settings = 'show';
