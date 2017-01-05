@@ -55,11 +55,11 @@ angular.module('fabular', ['ionic', 'fabular.controllers', 'fabular.services'])
   // setup an abstract state for the tabs directive
   .state({
   name : 'things',
-  url : '/things/{category}',
+  url : '/things',
   templateUrl : 'templates/things.html',
   controller : 'fabularController'
 });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/things/{category}');
+  $urlRouterProvider.otherwise('/things');
 
 });

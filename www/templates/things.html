@@ -13,12 +13,12 @@
     <div class="container" ng-show="clickedStatement === false">
       <div class="row animated slideInLeft question-container">
         <div class="question-container" ng-repeat="question in questionArray">
-              <img  class = "promptPic" ng-src="img/{{question.name}}.png" alt="ask for" />
+              <img  class = "qPic" ng-src="img/{{question.name}}.png" alt="ask for" />
         </div>
       </div>
       <div class="row answer-container">
         <div ng-repeat="result in resultLink">
-            <img class="promptPic" ng-src="img/{{result.name}}.png"/>
+            <img class="aPic" ng-src="img/{{result.name}}.png"/>
         </div>
       </div>
       <div class="row animated slideInRight options-container">
@@ -31,23 +31,23 @@
       <a ng-repeat="level in levels" ng-click="levelChange(level)" class="active tab button icon button-calm">{{level}}</a>
     </div>
   <div class="tabs tabs-background-transparent tabs-color-calm tabs-icon-top">
-  <a class="tab-item" >
+  <a class="tab-item active" >
     <i class="icon ion-ios-people"></i>
     Team
   </a>
-  <a class="tab-item" ng-click="setSettings()">
+  <a class="tab-item active" ng-click="setSettings()">
     <i class="icon ion-settings"></i>
     Level
   </a>
-  <a class="tab-item" ng-click="setCategory('fruits')">
+  <a class="tab-item active" ng-click="setCategory('fruits')">
     <i class="icon ion-social-apple"></i>
     Fruits
   </a>
-  <a class="tab-item" ng-click="setCategory('animals')">
+  <a class="tab-item active" ng-click="setCategory('animals')">
     <i class="icon ion-ios-paw"></i>
     Animals
   </a>
-  <a class="tab-item" ng-click="setCategory('toys')">
+  <a class="tab-item active" ng-click="setCategory('toys')">
     <i class="icon ion-ios-football"></i>
     Toys
   </a>

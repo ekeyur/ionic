@@ -23,7 +23,7 @@ const Cards = mongoose.model('card',{
 
 app.get('/things/:category',function(request,response){
   var category = request.params.category || 'fruits';
-  Cards.find({'item' : category})
+  Cards.find({ category : category})
   .then(function(obj){
     response.send(_.shuffle(obj[0].items).slice(0,3));
     })

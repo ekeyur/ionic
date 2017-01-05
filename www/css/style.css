@@ -41,7 +41,7 @@ width: 90px;
   position: absolute;
   top : 0;
   left : 0;
-  transform: translate(176%,1425%);
+  transform: translate(89%,1425%);
 }
 .tabs-background-transparent{
   background-color: rgba(0,0,0,.001);
@@ -75,7 +75,7 @@ flex-wrap: wrap;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150px;
+  height: 125px;
   text-align: center;
   border: 2px solid yellow;
   margin-bottom: 15px;
@@ -120,7 +120,14 @@ flex-wrap: wrap;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-
+.qPic,.aPic {
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}
 .promptPic {
   /*border: 4px outset transparent;*/
   border-radius: 10px;

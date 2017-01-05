@@ -9,7 +9,7 @@ angular.module('fabular.controllers', [])
 	var obj_1 = {"name" : "1", "wobble" : "false"};
 	var obj_2 = {"name" : "2", "wobble" : "false"};
 	var obj_3 = {"name" : "3", "wobble" : "false"};
-
+	var r;
 	$scope.levels = [1,2,3,4,5];
 	$scope.clickedStatement = false;
 	$scope.settings = 'noshow';
@@ -49,6 +49,8 @@ angular.module('fabular.controllers', [])
 	$scope.setCategory = function(value){
 		$scope.category = value;
 		console.log(value);
+		$scope.Again();
+
 	};
 	$scope.setSettings = function(){
 		$scope.settings = 'show';
@@ -59,7 +61,7 @@ angular.module('fabular.controllers', [])
   	fabularService.getThings($scope.category).success(function(data){
 			$scope.currentIndex = 0;
 			//Selects random number through 3 for levels with counting
-	    var r = (Math.floor(Math.random() * 3) + 1).toString();
+	    r = (Math.floor(Math.random() * 3) + 1).toString();
 			//Converts random number into an object
 			var r_num = {"name" : r, "wobble" : "false"};
 			//Selects single item from data array using random index number
